@@ -20,25 +20,25 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
     </context:component-scan>
 <!--    com.itheima.controller package should be scaned by springMvc instead of spring-->
-<!--    load properties file-->
-    <context:property-placeholder location="jdbc.properties"></context:property-placeholder>
+<!--&lt;!&ndash;    load properties file&ndash;&gt;-->
+<!--    <context:property-placeholder location="jdbc.properties"></context:property-placeholder>-->
 
-<!--    data source config-->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-        <property name="driverClass" value="${jdbc.driver}"></property>
-        <property name="jdbcUrl" value="${jdbc.url}"></property>
-        <property name="user" value="${jdbc.username}"></property>
-        <property name="password" value="${jdbc.password}"></property>
-    </bean>
+<!--&lt;!&ndash;    data source config&ndash;&gt;-->
+<!--    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">-->
+<!--        <property name="driverClass" value="${jdbc.driver}"></property>-->
+<!--        <property name="jdbcUrl" value="${jdbc.url}"></property>-->
+<!--        <property name="user" value="${jdbc.username}"></property>-->
+<!--        <property name="password" value="${jdbc.password}"></property>-->
+<!--    </bean>-->
 
-<!--    config sessionFactory-->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"></property>
-<!--        load mybatis core file-->
-        <property name="configLocation" value="sqlMapConfig.xml"></property>
-    </bean>
-<!--    scan packages&#45;&#45;mapper-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="org.jayden.mapper"></property>
-    </bean>
+<!--&lt;!&ndash;    config sessionFactory&ndash;&gt;-->
+<!--    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="dataSource"></property>-->
+<!--&lt;!&ndash;        load mybatis core file&ndash;&gt;-->
+<!--        <property name="configLocation" value="sqlMapConfig.xml"></property>-->
+<!--    </bean>-->
+<!--&lt;!&ndash;    scan packages&#45;&#45;mapper&ndash;&gt;-->
+<!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--        <property name="basePackage" value="org.jayden.mapper"></property>-->
+<!--    </bean>-->
 </beans>
