@@ -1,4 +1,4 @@
-package com.itheima.domain;
+package org.jayden.domain;
 
 public class Account {
     private Integer id;

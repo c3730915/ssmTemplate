@@ -1,7 +1,7 @@
-package com.itheima.service;
+package org.jayden.service;
 
-import com.itheima.domain.Account;
-import com.itheima.mapper.AccountMapper;
+import org.jayden.domain.Account;
+import org.jayden.mapper.AccountMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;

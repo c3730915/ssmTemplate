@@ -9,7 +9,7 @@
     <properties resource="jdbc.properties"></properties>
     <typeAliases>
 <!--        set aliases using scan packages-->
-        <package name="com.itheima.domain"/>
+        <package name="org.jayden.domain"/>
     </typeAliases>
 <!--    environment-->
     <environments default="development">
@@ -27,7 +27,7 @@
 <!--    Load com.itheima.mapper file-->
     <mappers>
 <!--        Scan package to load all com.itheima.mapper file in com.itheima.mapper folder-->
-        <package name="com.itheima.mapper"/>
+        <package name="org.jayden.mapper"/>
     </mappers>
 
 </configuration>

@@ -1,6 +1,6 @@
-package com.itheima.mapper;
+package org.jayden.mapper;
 
-import com.itheima.domain.Account;
+import org.jayden.domain.Account;
 
 import java.util.List;
 
