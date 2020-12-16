@@ -35,7 +35,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"></property>
 <!--        load mybatis core file-->
-        <property name="configLocation" value="sqlMapConfig-Spring.xml"></property>
+        <property name="configLocation" value="sqlMapConfig.xml"></property>
     </bean>
 <!--    scan packages&#45;&#45;mapper-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
