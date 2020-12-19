@@ -1,6 +1,7 @@
 package org.jayden.service;
 
 import org.jayden.domain.Account;
+import org.jayden.domain.User;
 import org.jayden.mapper.AccountMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -52,5 +53,24 @@ public class AccountServiceImpl implements AccountService {
         }
 
 
+    }
+
+
+    @Override
+    public User login(User user) {
+        try {
+            InputStream resourceAsStream = Resources.getResourceAsStream("sqlMapConfig.xml");
+            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+            SqlSession sqlSession = sqlSessionFactory.openSession();
+            AccountMapper mapper = sqlSession.getMapper(AccountMapper.class);
+            User logUser= mapper.login(user);
+            sqlSession.close();
+            return logUser;
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
