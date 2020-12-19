@@ -19,4 +19,27 @@ http://www.springframework.org/schema/context/spring-context.xsd">
         <!--排除controller的扫描-->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:exclude-filter>
     </context:component-scan>
+<!--  减少mybatis的重复代码  -->
+<!--    加载properties文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+<!--    配置数据源-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${jdbc.driver}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="user" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+<!--   配置session工厂 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+
+<!--        mybatis核心文件-->
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"></property>
+<!--       注意这个地方一定要添加classpath否则spring会找不到xml配置文件！ -->
+    </bean>
+<!--    扫描mapper所在的包 为mapper创建实现类-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="org.jayden.mapper"></property>
+    </bean>
+
 </beans>

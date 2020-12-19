@@ -6,28 +6,8 @@
 <!--Sql core config file-->
 <configuration>
     <!--Load properties file -->
-    <properties resource="jdbc.properties"></properties>
     <typeAliases>
 <!--        set aliases using scan packages-->
         <package name="org.jayden.domain"/>
     </typeAliases>
-<!--    environment-->
-    <environments default="development">
-        <environment id="development">
-            <transactionManager type="JDBC"></transactionManager>
-            <dataSource type="POOLED">
-                <property name="driver" value="${jdbc.driver}"></property>
-                <property name="url" value="${jdbc.url}"></property>
-                <property name="username" value="${jdbc.username}"></property>
-                <property name="password" value="${jdbc.password}"></property>
-            </dataSource>
-        </environment>
-    </environments>
-
-<!--    Load com.itheima.mapper file-->
-    <mappers>
-<!--        Scan package to load all com.itheima.mapper file in com.itheima.mapper folder-->
-        <package name="org.jayden.mapper"/>
-    </mappers>
-
 </configuration>
