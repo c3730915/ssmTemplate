@@ -1,6 +1,10 @@
 package org.jayden.Test;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import org.jayden.domain.Account;
 import org.jayden.domain.Word;
+import org.jayden.mapper.AccountMapper;
 import org.jayden.service.WordService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +22,9 @@ public class WordTest {
      */
     @Autowired
     private WordService wordService;
+
+    @Autowired
+    private AccountMapper accountMapper;
     @Test
     public void getWordByid(){
         Word wordbyId = wordService.findById(3);
@@ -26,7 +33,14 @@ public class WordTest {
     }
     @Test
     public void getWords(){
-        List<Word> words = wordService.findByNum(3);
-        System.out.println(words);
+        PageHelper.startPage(2,3);
+        List<Account> accounts = accountMapper.findAll();
+        for (Account account : accounts) {
+            System.out.println(account.toString());
+        }
+        PageInfo<Account> pageInfo = new PageInfo<>(accounts);
+        System.out.println("Current page"+pageInfo.getPageNum());
+        System.out.println(pageInfo.getPageSize());
+
     }
 }
