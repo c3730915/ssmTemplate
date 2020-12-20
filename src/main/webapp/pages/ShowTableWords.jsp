@@ -14,10 +14,10 @@
     <title>Show Table Words</title>
 </head>
 <body>
-<table class="table">
+<table class="table table-striped">
     <thead>
     <tr>
-        <th scope="col">#</th>
+<%--        <th scope="col">#</th>--%>
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">definition</th>
@@ -25,13 +25,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>${word.id}</td>
-        <td>${word.name}</td>
-        <td>${word.definition}</td>
-        <td>${word.translation}</td>
-    </tr>
+    <c:forEach items="${words}" var="word">
+        <tr>
+<%--            <th scope="row">1</th>--%>
+            <td>${word.id}</td>
+            <td>${word.name}</td>
+            <td>${word.definition}</td>
+            <td>${word.translation}</td>
+        </tr>
+    </c:forEach>
     </tbody>
 </table>
 

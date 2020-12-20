@@ -5,6 +5,8 @@ import org.jayden.mapper.WordMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("wordService")
 public class WordServiceImpl implements WordService {
 
@@ -15,5 +17,11 @@ public class WordServiceImpl implements WordService {
     public Word findById(int id) {
         Word result = mapper.findById(id);
         return result;
+    }
+
+    @Override
+    public List<Word> findByNum(int num) {
+        List<Word> words = mapper.findByNum(num);
+        return words;
     }
 }

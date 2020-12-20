@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/word")
@@ -22,7 +25,22 @@ public class WordController {
         System.out.println(id);
         ModelAndView modelAndView = new ModelAndView();
         Word wordbyId = wordService.findById(id);
-        modelAndView.addObject("word",wordbyId);
+        List<Word> list = new ArrayList<>();
+        list.add(wordbyId);
+
+//        List<Word> list = new LinkedList<>()
+        modelAndView.addObject("words",list);
+        modelAndView.setViewName("ShowTableWords");
+        return modelAndView;
+
+    }
+    @RequestMapping("/findWords")
+    public ModelAndView findWords(){
+        int id =Integer.parseInt( httpServletRequest.getParameter("id"));
+        System.out.println(id);
+        ModelAndView modelAndView = new ModelAndView();
+        List<Word> words = wordService.findByNum(id);
+        modelAndView.addObject("words",words);
         modelAndView.setViewName("ShowTableWords");
         return modelAndView;
 
