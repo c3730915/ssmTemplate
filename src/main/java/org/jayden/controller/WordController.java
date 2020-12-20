@@ -25,12 +25,12 @@ public class WordController {
         System.out.println(id);
         ModelAndView modelAndView = new ModelAndView();
         Word wordbyId = wordService.findById(id);
-        List<Word> list = new ArrayList<>();
-        list.add(wordbyId);
+//        List<Word> list = new ArrayList<>();
+//        list.add(wordbyId);
 
 //        List<Word> list = new LinkedList<>()
-        modelAndView.addObject("words",list);
-        modelAndView.setViewName("ShowTableWords");
+        modelAndView.addObject("words",wordbyId);
+        modelAndView.setViewName("/tmp/main");
         return modelAndView;
 
     }
