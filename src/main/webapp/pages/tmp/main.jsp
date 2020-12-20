@@ -31,13 +31,6 @@
         <div class="col-sm">col</div>
         <div class="col-sm">col</div>
     </div>
-    <div class="row">
-        <div class="col-sm-12" style="height: 30px">
-            <div class="progress" style="height: 25px;">
-                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-            </div>
-        </div>
-    </div>
     <div class="row" style="height: 600px">
         <div class="col-lg-6">
             <div style="margin-top:50px ">
@@ -79,7 +72,7 @@
                     <td><button style="height: 90%;width: 100%"  type="button" class="btn btn-danger">忘  记</button></td>
                 </table>
             </div>
-            <div>
+            <div style="margin-left: 25%;margin-top: 3%">
                 <nav aria-label="..." style="margin-left: 25%;margin-top: 3%">
                     <ul class="pagination">
                         <li class="page-item disabled">
@@ -100,6 +93,13 @@
                 </nav>
             </div>
         </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-12" style="height: 30px">
+    <div class="progress" style="height: 20px;">
+    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+    </div>
+    </div>
     </div>
 <!--        <div>-->
 <!--            <nav aria-label="..." style="margin-left: 20%;margin-top: 3%">-->
