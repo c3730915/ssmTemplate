@@ -26,14 +26,14 @@
 <body>
 <div class="container">
     <div class="row" style="height:50%;visibility: hidden">
-        <div class="col-sm">col</div>
-        <div class="col-sm">col</div>
-        <div class="col-sm">col</div>
-        <div class="col-sm">col</div>
+        <div class="col-xs">col</div>
+        <div class="col-xs">col</div>
+        <div class="col-xs">col</div>
+        <div class="col-xs">col</div>
     </div>
-    <div class="row" style="height: 750px">
+    <div class="row" style="height: 800px">
         <div class="col-lg-6">
-            <div style="margin-top:50px ">
+            <div style="margin-top:10px;height:0.5px;">
                 <div style="text-align: center;margin-top: 5%">
                     <h1>${words.name} <span class="badge badge-secondary">${words.id}</span></h1>
                     <h3>${words.phonetic} <button type="button" class="btn btn-default" aria-label="Left Align">
@@ -59,20 +59,20 @@
                 <p>汉语解释</p>
                 <p>${words.translation}</p>
             </div>
-            <div style="margin-top: 5%" class="alert alert-success" role="alert">
+            <div style="margin-top: 5%;height:25%" class="alert alert-success" role="alert">
                 <p> ${words.definition}</p>
             </div>
             <div style="margin-top: 5%" class="alert alert-warning" role="alert">
                 <p>${words.exchange}</p>
             </div>
-            <div style="margin-top: 30px">
+            <div style="margin-top: 30px;margin-bottom: 30px">
                 <table style="margin: auto;"  width="90%">
                     <td><button style="height: 90%;width: 100%;"  type="button" class="btn btn-success" >认  识</button></td>
                     <td><button style="height: 90%;width: 100%"  type="button" class="btn btn-warning">模  糊</button></td>
                     <td><button style="height: 90%;width: 100%"  type="button" class="btn btn-danger">忘  记</button></td>
                 </table>
             </div>
-            <div style="margin-left: 2%;margin-top: 5%;position: absolute">
+            <div style="margin-left: 2%;bottom: 30px;padding-top: 30px;position: absolute">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/word/find?id=${words.id-1}">Previous</a></li>
