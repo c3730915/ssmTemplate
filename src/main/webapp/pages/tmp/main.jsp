@@ -31,7 +31,7 @@
         <div class="col-sm">col</div>
         <div class="col-sm">col</div>
     </div>
-    <div class="row" style="height: 600px">
+    <div class="row" style="height: 750px">
         <div class="col-lg-6">
             <div style="margin-top:50px ">
                 <div style="text-align: center;margin-top: 5%">
@@ -72,23 +72,14 @@
                     <td><button style="height: 90%;width: 100%"  type="button" class="btn btn-danger">忘  记</button></td>
                 </table>
             </div>
-            <div style="margin-left: 25%;margin-top: 3%">
-                <nav aria-label="..." style="margin-left: 25%;margin-top: 3%">
+            <div style="margin-left: 2%;margin-top: 5%;position: absolute">
+                <nav aria-label="Page navigation example">
                     <ul class="pagination">
-                        <li class="page-item disabled">
-                            <span class="page-link">Previous</span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item active" aria-current="page">
-                        <span class="page-link">
-                            2
-                        <span class="sr-only">(current)</span>
-                        </span>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                        </li>
+                        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/word/find?id=${words.id-1}">Previous</a></li>
+                        <c:forEach var="i" begin="1" end="7">
+                            <li class="page-item"><a class="page-link" href="#">${i}</a></li>
+                        </c:forEach>
+                        <li class="page-item"><a class="page-link" href="${pageContext.request.contextPath}/word/find?id=${words.id+1}">Next</a></li>
                     </ul>
                 </nav>
             </div>
@@ -97,33 +88,10 @@
     <div class="row">
     <div class="col-sm-12" style="height: 30px">
     <div class="progress" style="height: 20px;">
-    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+    <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">25%</div>
     </div>
     </div>
     </div>
-<!--        <div>-->
-<!--            <nav aria-label="..." style="margin-left: 20%;margin-top: 3%">-->
-<!--                <ul class="pagination">-->
-<!--                    <li class="page-item disabled">-->
-<!--                        <span class="page-link">Previous</span>-->
-<!--                    </li>-->
-<!--                    <li class="page-item"><a class="page-link" href="#">1</a></li>-->
-<!--                    <li class="page-item active" aria-current="page">-->
-<!--                        <span class="page-link">-->
-<!--                            2-->
-<!--                        <span class="sr-only">(current)</span>-->
-<!--                        </span>-->
-<!--                    </li>-->
-<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
-<!--                    <li class="page-item">-->
-<!--                        <a class="page-link" href="#">Next</a>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--            </nav>-->
-<!--        </div>-->
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

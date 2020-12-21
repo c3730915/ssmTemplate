@@ -37,7 +37,7 @@ public class WordController {
     @RequestMapping("/findWords")
     public ModelAndView findWords(){
         int id =Integer.parseInt( httpServletRequest.getParameter("id"));
-        System.out.println(id);
+//        System.out.println(id);
         ModelAndView modelAndView = new ModelAndView();
         List<Word> words = wordService.findByNum(id);
         modelAndView.addObject("words",words);
