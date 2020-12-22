@@ -43,4 +43,13 @@ public class WordTest {
         System.out.println(pageInfo.getPageSize());
 
     }
+    @Test
+    public void getByname(){
+        List<Word> words = wordService.findByEngName("apple");
+        for (Word word : words) {
+            System.out.println(word.toString());
+
+        }
+
+    }
 }

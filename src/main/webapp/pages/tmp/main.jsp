@@ -3,23 +3,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false"
          pageEncoding="UTF-8"%>
 <!doctype html>
-<html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="${pageContext.request.contextPath}/js/js.cookie.js" type="module"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
+<%-- 一定要用这种方式获取目录，不然会找不到路径！在css中  --%>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="bootstrap-4.5.0-dist/css/bootstrap-grid.min.css">
+<%--    <link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/bootstrap.min.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/tmp/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+<%--    <link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/bootstrap.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/tmp/bootstrap-4.5.0-dist/css/bootstrap.css">
+<%--    <link rel="stylesheet" href="./bootstrap-4.5.0-dist/css/boot.min.cssstrap-grid.min.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/pages/tmp/bootstrap-4.5.0-dist/css/bootstrap-grid.css">
 
     <style>
         [class^="col"]{
             border: 1px solid #ccc;
         }
     </style>
+    <script>
+        // $(function () {
+        //     alert(Cookies.get("page"))
+        // })
+
+    </script>
 
 
 </head>
@@ -94,6 +105,8 @@
     </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
+
 </html>

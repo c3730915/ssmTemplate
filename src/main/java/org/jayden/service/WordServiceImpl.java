@@ -24,4 +24,10 @@ public class WordServiceImpl implements WordService {
         List<Word> words = mapper.findByNum(num);
         return words;
     }
+
+    @Override
+    public List<Word> findByEngName(String  wordName) {
+        List<Word> WordsbyNames = mapper.findByEngName(wordName);
+       return WordsbyNames;
+    }
 }

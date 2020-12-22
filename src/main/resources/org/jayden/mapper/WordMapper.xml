@@ -3,12 +3,17 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.jayden.mapper.WordMapper">
+<!--    Mybatis实现接口文件-->
     <select id="findById" resultType="org.jayden.domain.Word">
         select * from ecdict where id = #{id}
     </select>
 
     <select id="findByNum" resultType="org.jayden.domain.Word">
         select * from ecdict limit #{num}
+    </select>
+
+    <select id="findByEngName" resultType="org.jayden.domain.Word">
+        select * from ecdict where name = #{wordName}
     </select>
 
 </mapper>

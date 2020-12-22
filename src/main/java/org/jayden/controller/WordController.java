@@ -19,31 +19,36 @@ public class WordController {
     HttpServletRequest httpServletRequest;
     @Autowired
     private WordService wordService;
-    @RequestMapping("/find")
+    @RequestMapping("/findByid")
     public ModelAndView findByid(){
+        /**
+         * 根据id返回单个单词
+         */
         int id =Integer.parseInt( httpServletRequest.getParameter("id"));
         System.out.println(id);
         ModelAndView modelAndView = new ModelAndView();
         Word wordbyId = wordService.findById(id);
-//        List<Word> list = new ArrayList<>();
-//        list.add(wordbyId);
-
-//        List<Word> list = new LinkedList<>()
         modelAndView.addObject("words",wordbyId);
         modelAndView.setViewName("/tmp/main");
         return modelAndView;
 
     }
-    @RequestMapping("/findWords")
-    public ModelAndView findWords(){
-        int id =Integer.parseInt( httpServletRequest.getParameter("id"));
-//        System.out.println(id);
-        ModelAndView modelAndView = new ModelAndView();
-        List<Word> words = wordService.findByNum(id);
-        modelAndView.addObject("words",words);
-        modelAndView.setViewName("ShowTableWords");
-        return modelAndView;
-
+//    @RequestMapping("/findWords")
+//    public ModelAndView findWords(){
+//        int id =Integer.parseInt( httpServletRequest.getParameter("id"));
+////        System.out.println(id);
+//        ModelAndView modelAndView = new ModelAndView();
+//        List<Word> words = wordService.findByNum(id);
+//        modelAndView.addObject("words",words);
+//        modelAndView.setViewName("ShowTableWords");
+//        return modelAndView;
+//
+//    }
+    @RequestMapping("/findByname")
+    public ModelAndView findByname(){
+        String wordName = httpServletRequest.getParameter("name");
+//        wordService.findByName();
+        return null;
     }
 
 }
