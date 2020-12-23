@@ -2,6 +2,7 @@
          pageEncoding="UTF-8"%>
 <html>
 <head>
+<%--  此页面用于测试cookie存储  --%>
     <title>SSM template</title>
     <script src="js/js.cookie.js" type="module"></script>
     <script src="js/jquery-3.5.1.js"></script>
