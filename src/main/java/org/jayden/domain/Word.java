@@ -7,6 +7,7 @@ public class Word {
     private String definition;
     private String translation;
     private String exchange;
+    private String tag;
 
     @Override
     public String toString() {
@@ -17,7 +18,16 @@ public class Word {
                 ", definition='" + definition + '\'' +
                 ", translation='" + translation + '\'' +
                 ", exchange='" + exchange + '\'' +
+                ", tag='" + tag + '\'' +
                 '}';
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public String getName() {
