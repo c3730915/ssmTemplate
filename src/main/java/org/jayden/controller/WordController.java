@@ -15,6 +15,9 @@ import java.util.List;
 @Controller
 @RequestMapping("/word")
 public class WordController {
+    /**
+     * Controller 负责处理前端访问到当前request目录下的请求
+     */
     @Autowired
     HttpServletRequest httpServletRequest;
     @Autowired
@@ -24,7 +27,16 @@ public class WordController {
         /**
          * 根据id返回单个单词
          */
-        int id =Integer.parseInt( httpServletRequest.getParameter("id"));
+        int id;
+        if( httpServletRequest.getParameter("id")!=null)
+        {
+            id =Integer.parseInt( httpServletRequest.getParameter("id"));
+        }
+        else {
+            id =100;//无参数的默认id
+
+        }
+
         System.out.println(id);
         ModelAndView modelAndView = new ModelAndView();
         Word wordbyId = wordService.findById(id);
@@ -33,22 +45,31 @@ public class WordController {
         return modelAndView;
 
     }
-//    @RequestMapping("/findWords")
-//    public ModelAndView findWords(){
-//        int id =Integer.parseInt( httpServletRequest.getParameter("id"));
-////        System.out.println(id);
-//        ModelAndView modelAndView = new ModelAndView();
-//        List<Word> words = wordService.findByNum(id);
-//        modelAndView.addObject("words",words);
-//        modelAndView.setViewName("ShowTableWords");
-//        return modelAndView;
-//
-//    }
     @RequestMapping("/findByname")
+
     public ModelAndView findByname(){
-        String wordName = httpServletRequest.getParameter("name");
-//        wordService.findByName();
-        return null;
+        /**
+         * 根据单词名称返回查询到的单词列表
+         */
+        String wordName =null;
+        try {
+            if (httpServletRequest.getParameter("name")!=null){
+
+                wordName = httpServletRequest.getParameter("name");
+            }
+            else {
+                wordName =null;
+            }
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        List<Word> words = wordService.findByEngName(wordName);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("ShowTableWords");
+        modelAndView.addObject("words",words);
+        return modelAndView;
     }
 
 }

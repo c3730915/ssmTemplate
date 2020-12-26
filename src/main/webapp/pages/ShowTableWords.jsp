@@ -14,7 +14,7 @@
     <title>Show Table Words</title>
 </head>
 <body>
-<table class="table table-striped">
+<table class="table table-striped" style="width: 70%;height: 60%;margin-top: 90px;margin: auto">
     <thead>
     <tr>
 <%--        <th scope="col">#</th>--%>
@@ -27,9 +27,13 @@
     <tbody>
     <c:forEach items="${words}" var="word">
         <tr>
-<%--            <th scope="row">1</th>--%>
             <td>${word.id}</td>
-            <td>${word.name}</td>
+            <td>
+                <a href="${pageContext.request.contextPath}/word/findByid?id=${word.id}">
+                ${word.name}
+                </a>
+            </td>
+
             <td>${word.definition}</td>
             <td>${word.translation}</td>
         </tr>

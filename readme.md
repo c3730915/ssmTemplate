@@ -1,7 +1,9 @@
 # 一个简单上手的ssm框架搭建项目
 
 很多朋友可能都有学习SSM项目的时候，繁琐的xml文件配置，或者说很难在网上找到一个完整的项目模块。本项目仅仅提供了简单的项目框架搭建，以供大家进行学习
-现在项目更新为查单词的网页。适配手机以及电脑
+
+
+**现在项目更新为查单词的网页。适配手机以及电脑**
 ## 项目树
 ```
 ~~~~├─.idea
@@ -33,47 +35,7 @@
 │          │          ├─css
 │          │          └─js
 │          └─WEB-INF
-└─target
-    ├─classes
-    │  ├─org
-    │  │  └─jayden
-    │  │      ├─controller
-    │  │      ├─domain
-    │  │      ├─mapper
-    │  │      ├─service
-    │  │      └─Test
-    │  └─shiro
-    ├─generated-sources
-    │  └─annotations
-    ├─maven-archiver
-    ├─maven-status
-    │  └─maven-compiler-plugin
-    │      └─compile
-    │          └─default-compile
-    └─ssmTemplate
-        ├─js
-        ├─META-INF
-        ├─pages
-        │  ├─login
-        │  │  ├─css
-        │  │  ├─img
-        │  │  └─js
-        │  └─tmp
-        │      ├─.idea
-        │      └─bootstrap-4.5.0-dist
-        │          ├─css
-        │          └─js
-        └─WEB-INF
-            ├─classes
-            │  ├─org
-            │  │  └─jayden
-            │  │      ├─controller
-            │  │      ├─domain
-            │  │      ├─mapper
-            │  │      ├─service
-            │  │      └─Test
-            │  └─shiro
-            └─lib~~~~
+└
 ```
 
 
