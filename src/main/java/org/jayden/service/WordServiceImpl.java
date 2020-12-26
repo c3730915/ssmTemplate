@@ -27,7 +27,13 @@ public class WordServiceImpl implements WordService {
 
     @Override
     public List<Word> findByEngName(String  wordName) {
-        List<Word> WordsbyNames = mapper.findByEngName(wordName);
-       return WordsbyNames;
+        List<Word> list_eng = mapper.findByEngName(wordName);
+       return list_eng;
+    }
+
+    @Override
+    public List<Word> findByCnName(String wordName) {
+        List<Word> list_cn = mapper.findByCnName(wordName);
+        return list_cn;
     }
 }

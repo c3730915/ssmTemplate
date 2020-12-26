@@ -15,5 +15,8 @@
     <select id="findByEngName" resultType="org.jayden.domain.Word">
         select * from ecdict where name = #{wordName}
     </select>
-
+    <select id="findByCnName" resultType="org.jayden.domain.Word">
+<!--        <bind name="pattern" value=" '%'+_parameter + '%'"/>-->
+        select * from ecdict where (translation like '%${wordName}%' )
+    </select>
 </mapper>

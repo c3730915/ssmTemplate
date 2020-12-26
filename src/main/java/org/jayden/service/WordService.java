@@ -10,5 +10,5 @@ public interface WordService {
     public List<Word> findByNum(int num);
 
     public List<Word> findByEngName(String  wordName);
-//    public List<Word> findByCnName(String  wordName);
+    public List<Word> findByCnName(String  wordName);
 }

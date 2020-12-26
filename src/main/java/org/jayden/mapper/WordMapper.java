@@ -12,5 +12,7 @@ public interface WordMapper {
      */
     public Word findById(int id); //根据id查找单词
     public List<Word> findByNum(int num); //返回num个单词
-    public List<Word> findByEngName(String wordName) ;
+    public List<Word> findByEngName(String wordName) ;//根据英文名查询单词
+
+    public List<Word> findByCnName(String wordName); //根据中文名查询单词
 }

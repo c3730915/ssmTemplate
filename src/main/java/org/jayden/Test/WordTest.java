@@ -44,8 +44,17 @@ public class WordTest {
 
     }
     @Test
-    public void getByname(){
-        List<Word> words = wordService.findByEngName("apple");
+    public void getByEngname(){
+        List<Word> words = wordService.findByEngName("%"+"apple");
+        for (Word word : words) {
+            System.out.println(word.toString());
+
+        }
+
+    }
+    @Test
+    public void getByCnname(){
+        List<Word> words = wordService.findByCnName("苹果");
         for (Word word : words) {
             System.out.println(word.toString());
 

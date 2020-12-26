@@ -20,12 +20,12 @@ pageEncoding="UTF-8"%>
                 var method = $("#select").val();
                 if (method=="findByEngName")
                 {
-                    window.location.href="${pageContext.request.contextPath}/word/findByname?name="+$("#input").val()
+                    window.location.href="${pageContext.request.contextPath}/word/findByEngname?name="+$("#input").val()
                     // alert($("#input").val())
                 }
                 if (method=="findByCnName")
                 {
-                    alert(1)
+                    window.location.href="${pageContext.request.contextPath}/word/findByCnname?name="+$("#input").val()
                 }
                 if (method=="chooseMethod")
                 {

@@ -45,9 +45,8 @@ public class WordController {
         return modelAndView;
 
     }
-    @RequestMapping("/findByname")
-
-    public ModelAndView findByname(){
+    @RequestMapping("/findByEngname")
+    public ModelAndView findByEngname(){
         /**
          * 根据单词名称返回查询到的单词列表
          */
@@ -66,6 +65,32 @@ public class WordController {
         }
 
         List<Word> words = wordService.findByEngName(wordName);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("ShowTableWords");
+        modelAndView.addObject("words",words);
+        return modelAndView;
+    }
+
+    @RequestMapping("/findByCnname")
+    public ModelAndView findByCnname(){
+        /**
+         * 根据单词名称返回查询到的单词列表
+         */
+        String wordName =null;
+        try {
+            if (httpServletRequest.getParameter("name")!=null){
+
+                wordName = httpServletRequest.getParameter("name");
+            }
+            else {
+                wordName =null;
+            }
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+
+        List<Word> words = wordService.findByCnName(wordName);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("ShowTableWords");
         modelAndView.addObject("words",words);
