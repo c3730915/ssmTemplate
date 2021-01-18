@@ -15,6 +15,7 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <mvc:annotation-driven></mvc:annotation-driven>
 <!--    ModelAndView resolver-->
     <bean id="resourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<!--        视图前缀后缀-->
         <property name="prefix" value="/pages/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>

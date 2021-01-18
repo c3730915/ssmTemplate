@@ -41,7 +41,7 @@ public class WordController {
         ModelAndView modelAndView = new ModelAndView();
         Word wordbyId = wordService.findById(id);
         modelAndView.addObject("words",wordbyId);
-        modelAndView.setViewName("/tmp/main");
+        modelAndView.setViewName("main");
         return modelAndView;
 
     }
